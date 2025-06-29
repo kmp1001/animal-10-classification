@@ -24,6 +24,10 @@ The goal of this project is to design, implement and evaluate a lightweight deep
 - **Ablation-Driven Simplification**  
   We empirically evaluate which modules genuinely contribute to performance on Animal-10. Counterintuitively, removing certain complex components often improved stability and accuracy, guiding our final streamlined design.
 
+<p align="center">
+  <img width="800" alt="model structure" 
+       src="https://github.com/user-attachments/assets/3a82c9d9-befa-4d01-8c60-7d17c07193d2" />
+</p>
 
 ---
 
@@ -114,7 +118,13 @@ The goal of this project is to design, implement and evaluate a lightweight deep
 | **Final Model (tuned)**      | **91.00%** | —         | —       | —        |
 
 > **Best ablation:** Exp 6 (remove fusion & use linear classifier) → 84.51%  
-> **Final tuning** (further hyperparam & augmentation tweaks) → **91%**  
+> **Final tuning** (further hyperparam & augmentation tweaks) → **91%**
+<p align="center">
+<img width="800" alt="final quantitative index table" src="https://github.com/user-attachments/assets/369a6250-d137-4135-93a9-e5131ee61c50" />
+</p>
+<p align="center">
+<img width="800" alt="final confusion matrix" src="https://github.com/user-attachments/assets/2e26f640-2a92-4885-9073-245670a30198" />
+</p>
 
 By comparing the performance across all ablation studies, we found that, although adding complex modules (such as multi-scale fusion and ArcMarginProduct) can boost accuracy in some tasks, these enhancements did not yield significant improvements on the Animal-10 dataset—and in fact sometimes introduced training instability or overfitting. In contrast, simplifying the model led to markedly better performance and a more stable training process. This indicates that, for Animal-10, a streamlined architecture is better suited to the dataset’s characteristics.
 
